@@ -61,7 +61,7 @@ def handle_vessel(env, vessel_id, terminal):
     print(f"Time {env.now:.3f}: Vessel {vessel_id} berthed")
     
     # Start discharging containers
-    yield env.process(terminal.discharge_containers(vessel_id, 100))
+    yield env.process(terminal.discharge_containers(vessel_id, 150))
     print(f"Time {env.now:.3f}: Vessel {vessel_id} finished unloading and leaves")
 
     # Release the berth after unloading
@@ -100,7 +100,7 @@ def get_simulation_parameters():
         num_berths = 2
         num_cranes = 2
         num_trucks = 3
-        simulation_time = 5000
+        simulation_time = 1000
 
     return num_berths, num_cranes, num_trucks, simulation_time
 
